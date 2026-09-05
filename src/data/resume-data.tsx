@@ -125,16 +125,22 @@ export const RESUME_DATA = {
   ],
   projects: [
     {
-      title: "Equity Research Reports",
+      title: "Rocket Lab Inc. Equity Research",
+      date: "February 2024",
       techStack: [
-        "Intel Corp.",
         "Rocket Lab Inc.",
+        "Aerospace",
       ],
-      description: "Under Western Algorithmic Trading Club, I worked alongisde team members to curate equity research reports for educational purposes",
+      description: "Report on Rocket Lab, produced as part of Western Algorithmic Trading Club. Report covers the internal business, industry positioning, and valuation.",
       logo: ConsultlyLogo,
+      link: {
+        label: "rocketlab-research-report.pdf",
+        href: "/reports/rocketlab-research-report.pdf",
+      },
     },
     {
       title: "Amazon: Ascent to Space",
+      date: "December 2023",
       techStack: [
         "Amazon.com Inc",
       ],
@@ -143,6 +149,20 @@ export const RESUME_DATA = {
       link: {
         label: "consultly.com",
         href: "https://www.iveybusinessreview.ca/magazine/articles/amazon-the-ascent-to-space?rq=amazon",
+      },
+    },
+    {
+      title: "Intel Corp. Equity Research",
+      date: "May 2023",
+      techStack: [
+        "Intel Corp.",
+        "Semiconductors",
+      ],
+      description: "Report on Intel, produced as part of Western Algorithmic Trading Club. Report covers the internal business, industry positioning, and valuation.",
+      logo: ConsultlyLogo,
+      link: {
+        label: "intel-research-report.pdf",
+        href: "/reports/intel-research-report.pdf",
       },
     },
   ],

@@ -9,30 +9,38 @@ import { Badge } from "./ui/badge";
 
 interface Props {
   title: string;
+  date?: string;
   description: string;
   tags: readonly string[];
   link?: string;
 }
 
-export function ProjectCard({ title, description, tags, link }: Props) {
+export function ProjectCard({ title, date, description, tags, link }: Props) {
   return (
     <Card className="flex flex-col overflow-hidden border border-muted p-3">
       <CardHeader className="">
         <div className="space-y-1">
-          <CardTitle className="text-base">
-            {link ? (
-              <a
-                href={link}
-                target="_blank"
-                className="inline-flex items-center gap-1 hover:underline"
-              >
-                {title}{" "}
-                <span className="size-1 rounded-full bg-green-500"></span>
-              </a>
-            ) : (
-              title
-            )}
-          </CardTitle>
+          <div className="flex items-start justify-between gap-x-2">
+            <CardTitle className="text-base">
+              {link ? (
+                <a
+                  href={link}
+                  target="_blank"
+                  className="inline-flex items-center gap-1 hover:underline"
+                >
+                  {title}{" "}
+                  <span className="size-1 rounded-full bg-green-500"></span>
+                </a>
+              ) : (
+                title
+              )}
+            </CardTitle>
+            {date ? (
+              <div className="shrink-0 text-xs tabular-nums text-gray-500">
+                {date}
+              </div>
+            ) : null}
+          </div>
           <div className="hidden font-mono text-xs underline print:visible">
             {link?.replace("https://", "").replace("www.", "").replace("/", "")}
           </div>
