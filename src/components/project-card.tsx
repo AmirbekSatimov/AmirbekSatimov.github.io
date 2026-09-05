@@ -7,6 +7,24 @@ import {
 } from "./ui/card";
 import { Badge } from "./ui/badge";
 
+const SITE_DOMAIN = "amirbeksatimov.com";
+
+/**
+ * Renders a link as a readable address for the print stylesheet, where the
+ * href isn't clickable. Site-relative links (e.g. hosted PDFs) are qualified
+ * with the domain so they're usable from a printed page.
+ */
+function formatPrintUrl(link: string) {
+  if (link.startsWith("/")) {
+    return `${SITE_DOMAIN}${link}`;
+  }
+
+  return link
+    .replace(/^https?:\/\//, "")
+    .replace(/^www\./, "")
+    .replace(/\/$/, "");
+}
+
 interface Props {
   title: string;
   date?: string;
@@ -42,7 +60,7 @@ export function ProjectCard({ title, date, description, tags, link }: Props) {
             ) : null}
           </div>
           <div className="hidden font-mono text-xs underline print:visible">
-            {link?.replace("https://", "").replace("www.", "").replace("/", "")}
+            {link ? formatPrintUrl(link) : null}
           </div>
           <CardDescription className="font-mono text-xs">
             {description}

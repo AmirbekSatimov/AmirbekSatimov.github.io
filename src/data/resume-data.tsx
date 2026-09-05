@@ -125,6 +125,20 @@ export const RESUME_DATA = {
   ],
   projects: [
     {
+      title: 'Exploring "Why Nations Fail"',
+      date: "November 2025",
+      techStack: [
+        "Substack",
+        "Institutional Economics",
+      ],
+      description: "Published on my Substack, this piece works through Acemoglu and Robinson's case that inclusive versus extractive institutions drive national prosperity, and questions what globalization and rapid technological change mean for that thesis.",
+      logo: ConsultlyLogo,
+      link: {
+        label: "asatimov.substack.com",
+        href: "https://asatimov.substack.com/p/exploring-why-nations-fail",
+      },
+    },
+    {
       title: "Rocket Lab Inc. Equity Research",
       date: "February 2024",
       techStack: [
