@@ -20,6 +20,15 @@ import {
 import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons";
 import headshot from "@/images/headshot.jpg";
 
+type Project = {
+  title: string;
+  date: string;
+  techStack: readonly string[];
+  description: string;
+  link?: { label: string; href: string };
+  media?: readonly { src: string; alt: string; type?: "image" | "video" }[];
+};
+
 export const RESUME_DATA = {
   name: "Amir Satimov",
   initials: "AS",
@@ -125,8 +134,32 @@ export const RESUME_DATA = {
   ],
   projects: [
     {
+      title: "Capstone Project",
+      date: "April 2025",
+      techStack: ["Solidworks", "Engineering Design"],
+      description:
+        "Designed and contructed a portable, loom for weaving biomaterials into a 3D structure. Key member in CAD design, group coordinator",
+      media: [
+        {
+          src: "/projects/No_T-Slot_V2.webp",
+          alt: "CAD render of the loom assembly",
+        },
+        {
+          src: "/projects/IMG_5169.webp",
+          alt: "Assembled loom prototype on the workbench",
+        },
+        {
+          src: "/projects/IMG_5424.mp4",
+          alt: "Clip of the loom weaving",
+          type: "video",
+        },
+      ],
+    },
+  ] as readonly Project[],
+  pieces: [
+    {
       title: 'Exploring "Why Nations Fail"',
-      date: "November 2025",
+      date: "Nov 2025",
       techStack: [
         "Substack",
         "Institutional Economics",
@@ -140,7 +173,7 @@ export const RESUME_DATA = {
     },
     {
       title: "Rocket Lab Inc. Equity Research",
-      date: "February 2024",
+      date: "Feb 2024",
       techStack: [
         "Rocket Lab Inc.",
         "Aerospace",
@@ -154,7 +187,7 @@ export const RESUME_DATA = {
     },
     {
       title: "Amazon: Ascent to Space",
-      date: "December 2023",
+      date: "Dec 2023",
       techStack: [
         "Amazon.com Inc",
       ],

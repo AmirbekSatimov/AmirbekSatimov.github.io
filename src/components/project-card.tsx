@@ -6,6 +6,7 @@ import {
   CardTitle,
 } from "./ui/card";
 import { Badge } from "./ui/badge";
+import { cn } from "@/lib/utils";
 
 const SITE_DOMAIN = "amirbeksatimov.com";
 
@@ -31,23 +32,34 @@ interface Props {
   description: string;
   tags: readonly string[];
   link?: string;
+  media?: readonly { src: string; alt: string; type?: "image" | "video" }[];
 }
 
-export function ProjectCard({ title, date, description, tags, link }: Props) {
+export function ProjectCard({
+  title,
+  date,
+  description,
+  tags,
+  link,
+  media,
+}: Props) {
+  const hasMedia = media !== undefined && media.length > 0;
+
   return (
-    <Card className="flex flex-col overflow-hidden border border-muted p-3">
+    <Card
+      className={cn(
+        "flex flex-col overflow-hidden border border-muted p-3",
+        // Media needs room to breathe, so those cards take the full grid width.
+        hasMedia && "md:col-span-2",
+      )}
+    >
       <CardHeader className="">
         <div className="space-y-1">
           <div className="flex items-start justify-between gap-x-2">
             <CardTitle className="text-base">
               {link ? (
-                <a
-                  href={link}
-                  target="_blank"
-                  className="inline-flex items-center gap-1 hover:underline"
-                >
-                  {title}{" "}
-                  <span className="size-1 rounded-full bg-green-500"></span>
+                <a href={link} target="_blank" className="hover:underline">
+                  {title}
                 </a>
               ) : (
                 title
@@ -67,6 +79,30 @@ export function ProjectCard({ title, date, description, tags, link }: Props) {
           </CardDescription>
         </div>
       </CardHeader>
+      {hasMedia ? (
+        <div className="mt-3 flex gap-2 overflow-x-auto pb-1 print:hidden">
+          {media.map((item) =>
+            item.type === "video" ? (
+              <video
+                key={item.src}
+                src={item.src}
+                aria-label={item.alt}
+                controls
+                playsInline
+                preload="metadata"
+                className="h-48 w-auto shrink-0 rounded-md border border-muted bg-black"
+              />
+            ) : (
+              <img
+                key={item.src}
+                src={item.src}
+                alt={item.alt}
+                className="h-48 w-auto shrink-0 rounded-md border border-muted object-cover"
+              />
+            ),
+          )}
+        </div>
+      ) : null}
       <CardContent className="mt-auto flex">
         <div className="mt-2 flex flex-wrap gap-1">
           {tags.map((tag) => (
