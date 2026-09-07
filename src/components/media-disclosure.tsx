@@ -13,7 +13,7 @@ interface Props {
 export function MediaDisclosure({ media, label = "See more" }: Props) {
   return (
     <details className="group mt-2 print:hidden">
-      <summary className="flex w-fit cursor-pointer list-none items-center gap-1 font-mono text-xs text-muted-foreground hover:text-foreground [&::-webkit-details-marker]:hidden">
+      <summary className="flex w-fit cursor-pointer list-none items-center gap-1 font-mono text-xs font-bold text-muted-foreground hover:text-foreground [&::-webkit-details-marker]:hidden">
         <ChevronRightIcon className="size-3 transition-transform duration-200 group-open:rotate-90" />
         {label}
       </summary>
