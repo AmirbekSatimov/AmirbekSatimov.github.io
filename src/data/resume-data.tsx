@@ -37,7 +37,7 @@ export const RESUME_DATA = {
   about:
     "Investment Analyst at Fiera Infrastructure",
   summary:
-    "I am currently working as an analyst at Fiera Infrastructure, a global middle-market infrastructure investment firm. I graduated in April 2025 as a dual-degree student attending the Ivey Business and Western Engineering for business administration and mechatronics systems engineering respectively. I am passionate about the markets, economics, technology, and space exploration.",
+    "I build at the seam between engineering and business. Mechatronics and Ivey at Western, then investment banking and infrastructure private equity — renewable power portfolios, fiber networks, and the occasional Python model that replaced a spreadsheet nobody wanted to maintain. I've founded things, scaled them, and learned that I'd rather be close to what's being built than a step removed from it. Currently focused on early-stage work where the mandate is broad and the outcome is yours to own/",
   avatarUrl: headshot.src,
   personalWebsiteUrl: "TEMPLATE", // Update
   contact: {
