@@ -102,6 +102,12 @@ export default function Page() {
         <Section>
           <h2 className="text-xl font-bold">Work Experience</h2>
           {RESUME_DATA.work.map((work) => {
+            // A description can be a single string or several paragraphs.
+            const paragraphs =
+              typeof work.description === "string"
+                ? [work.description]
+                : work.description;
+
             return (
               <Card key={work.company}>
                 <CardHeader>
@@ -132,8 +138,10 @@ export default function Page() {
                     {work.title}
                   </h4>
                 </CardHeader>
-                <CardContent className="mt-2 text-xs">
-                  {work.description}
+                <CardContent className="mt-2 space-y-2 text-xs">
+                  {paragraphs.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
                   {"media" in work ? (
                     <MediaDisclosure media={work.media} />
                   ) : null}

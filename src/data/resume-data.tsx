@@ -96,13 +96,15 @@ export const RESUME_DATA = {
     {
       company: "Fiera Infrastructure.",
       link: "https://www.fierainfrastructure.com/en/",
-      badges: [],
+      badges: ["Python", "AI Automation"],
       title: "Investment Analyst",
       logo: ClevertechLogo,
       start: "July 2025",
       end: "Present",
-      description:
+      description: [
         "Member of Investments team, managing and deploying $4.8B in funds across infrastructure-class assets. Providing analytical, modelling, and due diligence support for transaction execution and asset management (AM) duties.",
+        "Led AI integration into asset management and reporting. Automated quarterly operating reports using Python and Claude Code, cutting reporting turnaround by ~75%. Automated tracking-related workstream, cutting turnaround time by ~80%.",
+      ],
     },
     {
       company: "Fort Capital.",
@@ -154,10 +156,19 @@ export const RESUME_DATA = {
   ],
 
   skills: [
-    "Valuations",
-    "Python",
-    "Data Analysis",
-    "Excel"
+    "Python & Automation (Pandas)",
+    "TypeScript",
+    "JavaScript",
+    "Node.js",
+    "Expo",
+    "Supabase",
+    "Git",
+    "Claude Code / AI-assisted development",
+    "Financial Modelling",
+    "Valuation",
+    "Excel",
+    "Stakeholder-Facing Work",
+    "GTM",
   ],
   projects: [
     {

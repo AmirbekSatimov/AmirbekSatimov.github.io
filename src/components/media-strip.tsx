@@ -42,6 +42,7 @@ export function MediaStrip({ media, className, itemHeight = "h-48" }: Props) {
             key={item.src}
             src={item.src}
             alt={item.alt}
+            loading="lazy"
             className={cn(
               "w-auto shrink-0 rounded-md border border-muted object-cover",
               itemHeight,
