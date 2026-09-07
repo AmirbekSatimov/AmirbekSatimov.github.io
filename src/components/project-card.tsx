@@ -6,6 +6,7 @@ import {
   CardTitle,
 } from "./ui/card";
 import { Badge } from "./ui/badge";
+import { MediaStrip, type MediaItem } from "./media-strip";
 import { cn } from "@/lib/utils";
 
 const SITE_DOMAIN = "amirbeksatimov.com";
@@ -32,7 +33,7 @@ interface Props {
   description: string;
   tags: readonly string[];
   link?: string;
-  media?: readonly { src: string; alt: string; type?: "image" | "video" }[];
+  media?: readonly MediaItem[];
 }
 
 export function ProjectCard({
@@ -79,30 +80,7 @@ export function ProjectCard({
           </CardDescription>
         </div>
       </CardHeader>
-      {hasMedia ? (
-        <div className="mt-3 flex gap-2 overflow-x-auto pb-1 print:hidden">
-          {media.map((item) =>
-            item.type === "video" ? (
-              <video
-                key={item.src}
-                src={item.src}
-                aria-label={item.alt}
-                controls
-                playsInline
-                preload="metadata"
-                className="h-48 w-auto shrink-0 rounded-md border border-muted bg-black"
-              />
-            ) : (
-              <img
-                key={item.src}
-                src={item.src}
-                alt={item.alt}
-                className="h-48 w-auto shrink-0 rounded-md border border-muted object-cover"
-              />
-            ),
-          )}
-        </div>
-      ) : null}
+      {hasMedia ? <MediaStrip media={media} className="mt-3" /> : null}
       <CardContent className="mt-auto flex">
         <div className="mt-2 flex flex-wrap gap-1">
           {tags.map((tag) => (

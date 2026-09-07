@@ -49,6 +49,11 @@ export const RESUME_DATA = {
         url: "https://www.linkedin.com/in/amirbeksatimov/",
         icon: LinkedInIcon,
       },
+      {
+        name: "GitHub",
+        url: "https://github.com/AmirbekSatimov",
+        icon: GitHubIcon,
+      },
     ],
   },
   education: [
@@ -67,6 +72,28 @@ export const RESUME_DATA = {
   ],
   work: [
     {
+      company: "Lore.",
+      link: "https://lorecinemas.com/",
+      badges: [],
+      title: "Co-Founder",
+      logo: ClevertechLogo,
+      start: "April 2026",
+      end: "Present",
+      description:
+        "Co-founded mobile-first entertainment ranking platform that replaces traditional star ratings with a comparative ranking system to capture how people actually think about movies and TV shows and to “intentionalize” consumption.",
+      media: [
+        {
+          src: "/work/lore-app.webp",
+          alt: "Lore app home screen showing a title card and recommendations",
+        },
+        {
+          src: "/work/lore-demo.mp4",
+          alt: "Screen recording demo of the Lore app",
+          type: "video",
+        },
+      ],
+    },
+    {
       company: "Fiera Infrastructure.",
       link: "https://www.fierainfrastructure.com/en/",
       badges: [],
@@ -75,7 +102,7 @@ export const RESUME_DATA = {
       start: "July 2025",
       end: "Present",
       description:
-        "Assisting in investment and asset management processes.",
+        "Member of Investments team, managing and deploying $4.8B in funds across infrastructure-class assets. Providing analytical, modelling, and due diligence support for transaction execution and asset management (AM) duties.",
     },
     {
       company: "Fort Capital.",
